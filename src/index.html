@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
     <title>Async-race</title>
 </head>
 <body>
     <div class="nav">
-        <button>TO GARAGE</button>
-        <button>TO WINNERS</button>
+        <button class="buttonToGarage">TO GARAGE</button>
+        <button class="buttonToWinners">TO WINNERS</button>
     </div>
-    <div class="control">
-        <div class="row">
-            <input type="text">
-            <button>CREATE</button>
+    <div class="content-garage">
+        <div class="control">
+            <div class="row">
+                <input type="text">
+                <button>CREATE</button>
+            </div>
+            <div class="row">
+                <input type="text">
+                <button>UPDATE</button>
+            </div>
+            <div class="row">
+                <button>RACE</button>
+                <button>RESET</button>
+                <button>GENERATE CARS</button>
+            </div>
         </div>
-        <div class="row">
-            <input type="text">
-            <button>UPDATE</button>
-        </div>
-        <div class="row">
-            <button>RACE</button>
-            <button>RESET</button>
-            <button>GENERATE CARS</button>
-        </div>
-    </div>
-        <p class="number-garage">Garage(104)</p>
+        <p class="number-garage">Garage (<span class="amount-cars">104</span>)</p>
         <p class="number-page">page #9</p>
         <div class="main">
             <div class="block">
@@ -55,7 +55,11 @@
                 </div>
             </div>
         </div>
-    
-    <script src="./index.js"></script>
+    </div>
+    <div class="content-winners">
+        <p class="number-garage">Winners (4)</p>
+        <p class="number-page">page #1</p>
+    </div>
+    <!-- <script type="module" src="./index.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,105 @@
+button {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+}
+
+.content-garage,
+.content-winners {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.control {
+    flex-direction: column;
+    margin: 30px 0 30px 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    border-radius: solid white 1px;
+    width: 100%;
+}
+
+.block {
+    width: 100%;
+    border: solid red 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.number-garage,
+.number-page {
+    color: white;
+    margin: 10px 0 10px 0;
+}
+
+.number-garage {
+    font-size: 30px;
+}
+
+.number-page {
+    font-size: 25px;
+}
+
+.block-row-1,
+.block-row-2 {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* .car-img {
+    background: url(./assets/svg/car.svg);
+    filter: brightness(0) saturate(100%) invert(12%) sepia(99%) saturate(7475%) hue-rotate(10deg) brightness(105%) contrast(118%);
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+} */
+
+.row {
+    margin: 10px 0 10px 0;
+}
+
+/* .section-video-bottom > button {
+    width: 130px;
+    height: 130px;
+    background: url(./assets/svg/Play_hover.svg);
+    border: none;
+    transition: 0.3s;
+} */
+
+/* .section-video-bottom > button:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+  } */
+
+  .block-row-1 > div {
+    color: yellow;
+    display: inline-block;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .show {
+    display: flex;
+  }
