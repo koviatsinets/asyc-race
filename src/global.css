@@ -66,13 +66,14 @@ body {
 
 }
 
-/* .car-img {
-    background: url(./assets/svg/car.svg);
-    filter: brightness(0) saturate(100%) invert(12%) sepia(99%) saturate(7475%) hue-rotate(10deg) brightness(105%) contrast(118%);
+.car-img {
+    background-color: red;
+    /* background: url(./assets/svg/car.svg);
+    filter: brightness(0) saturate(100%) invert(12%) sepia(99%) saturate(7475%) hue-rotate(10deg) brightness(105%) contrast(118%); */
     width: 50px;
     height: 50px;
     display: inline-block;
-} */
+}
 
 .row {
     margin: 10px 0 10px 0;
