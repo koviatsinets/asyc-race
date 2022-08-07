@@ -79,20 +79,58 @@ body {
     margin: 10px 0 10px 0;
 }
 
-  .block-row-1 > div {
+.block-row-1 > div {
     color: yellow;
     display: inline-block;
-  }
+}
 
-  .hidden {
+.hidden {
     display: none;
-  }
+}
 
-  .show {
+.show {
     display: flex;
-  }
+}
 
-  .nav-bottom {
+.nav-bottom {
     display: flex;
     margin-top: 30px;
-  }
+}
+
+.modal-window {
+    position: absolute;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 250px);
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 20px;
+    display: none;
+}
+
+.modal-text {
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 500px;
+    margin-left: 10px;
+}
+  
+th, td {
+    border: solid white 1px;
+}
+
+th {
+    color: white;
+}
+
+.table-number {
+    color: white;
+}

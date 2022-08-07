@@ -61,3 +61,37 @@ export async function switchCarEngine(id, status) {
     const car = await response.json();
     return car;
   }
+
+  export async function getWinners() {
+    let limit = 10;
+  const response = await fetch(`http://127.0.0.1:3000/winners`);
+  console.log(response)
+//   const totalCount = await response.headers.get('X-Total-Count');
+  const data = await response.json();
+  return data;
+}
+
+export async function getWinner() {
+  const response = await fetch(`http://127.0.0.1:3000/winners`);
+  const data = await response.json();
+  return data;
+}
+getWinners()
+
+export async function createWinner() {
+    const response = await fetch(`http://127.0.0.1:3000/winners`);
+    const data = await response.json();
+    return data;
+  }
+
+  export async function deleteWinner() {
+    const response = await fetch(`http://127.0.0.1:3000/winners`);
+    const data = await response.json();
+    return data;
+  }
+
+  export async function updateWinner() {
+    const response = await fetch(`http://127.0.0.1:3000/winners`);
+    const data = await response.json();
+    return data;
+  }

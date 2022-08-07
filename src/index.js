@@ -240,6 +240,9 @@ async function startCar() {
   let speed = document.documentElement.clientWidth / (speedSec * 60);
   try {
     let statusEngine = await switchCarEngine(idCar, "drive");
+    console.log(statusEngine)
+    console.log(idCar, 'победитель!')
+    showWinner(idCar);
     buttonStopRace.disabled = false;
   } catch {
     cancelAnimationFrame(idReq);
@@ -256,7 +259,7 @@ async function startCar() {
   function tick() {
      elem.style.cssText = `transform: translateX(${currentX}px)`;
     currentX += speed;
-    if (currentX <= endX) {
+    if (currentX <= endX) { 
       idReq = requestAnimationFrame(tick);
     } else {
       cancelAnimationFrame(idReq);
@@ -280,6 +283,7 @@ function startRace() {
 }
 
 //-------------------- Stop Race ---------------------//
+
 let buttonStopRace = document.querySelector('.stop-race');
 buttonStopRace.addEventListener('click', stopRace);
 buttonStopRace.disabled = true;
@@ -292,3 +296,31 @@ function stopRace() {
   buttonStopRace.disabled = true;
   buttonStartRace.disabled = false;
 }
+
+//-------------------- Show winner ---------------------//
+
+let isWin = false;
+let modalWindow = document.querySelector('.modal-window');
+let modalText = document.querySelector('.modal-text');
+
+async function showWinner(id) {
+  if (isWin === false) {
+    let car = await getCar(id);
+    console.log(car)
+    modalWindow.style.display='flex';
+    modalText.innerText=`Winner: ${car.name}`
+  }
+  isWin = true;
+  
+}
+
+//-------------------- Close modal ---------------------//
+
+let buttonModalClose = document.querySelector('.button-modal-close');
+buttonModalClose.addEventListener('click', closeModal);
+
+function closeModal() {
+  modalWindow.style.display='none';
+  stopRace();
+}
+
