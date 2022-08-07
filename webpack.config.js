@@ -17,7 +17,14 @@ const baseConfig = {
                 test: /.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
-              }
+            },
+            {
+                test: /.(svg)$/i,
+                type: 'asset/resource',
+                generator: {
+                  filename: 'assets/svg/[name][ext][query]'
+                },
+              },
         ],
     },
     resolve: {

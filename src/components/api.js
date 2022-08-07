@@ -1,7 +1,11 @@
+import { countPage } from "../index";
+
 export async function getCars() {
-  const response = await fetch('http://127.0.0.1:3000/garage');
+    let limit = 7;
+  const response = await fetch(`http://127.0.0.1:3000/garage/?_page=${countPage}&_limit=${limit}`);
+  const totalCount = await response.headers.get('X-Total-Count');
   const data = await response.json();
-  return data;
+  return {data, totalCount};
 }
 
 export async function getCar(id) {
@@ -48,4 +52,12 @@ export async function startStopCarEngine(id, status) {
   });
   const car = await response.json();
   return car;
-} 
+}
+
+export async function switchCarEngine(id, status) {
+    const response = await fetch(`http://127.0.0.1:3000/engine?id=${id}&status=${status}`, {
+      method: 'PATCH',
+    });
+    const car = await response.json();
+    return car;
+  }
