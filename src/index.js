@@ -321,6 +321,7 @@ buttonModalClose.addEventListener('click', closeModal);
 
 function closeModal() {
   modalWindow.style.display='none';
+  isWin = false;
   stopRace();
 }
 

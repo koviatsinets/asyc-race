@@ -71,27 +71,42 @@ export async function switchCarEngine(id, status) {
   return data;
 }
 
-export async function getWinner() {
-  const response = await fetch(`http://127.0.0.1:3000/winners`);
+export async function getWinner(id) {
+  const response = await fetch(`http://127.0.0.1:3000/winners/${id}`);
   const data = await response.json();
   return data;
 }
-getWinners()
 
-export async function createWinner() {
-    const response = await fetch(`http://127.0.0.1:3000/winners`);
+export async function createWinner(body) {
+    const response = await fetch(`http://127.0.0.1:3000/winners`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
     const data = await response.json();
     return data;
   }
 
-  export async function deleteWinner() {
-    const response = await fetch(`http://127.0.0.1:3000/winners`);
+
+
+  export async function deleteWinner(id) {
+    const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
+      method: 'DELETE',
+    });
     const data = await response.json();
     return data;
   }
 
-  export async function updateWinner() {
-    const response = await fetch(`http://127.0.0.1:3000/winners`);
+  export async function updateWinner(id, body) {
+    const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
     const data = await response.json();
     return data;
   }
