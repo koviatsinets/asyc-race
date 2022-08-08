@@ -69,7 +69,6 @@ body {
 }
 
 .car-img {
-    background: url(./assets/svg/car.svg);
     width: 50px;
     height: 50px;
     display: inline-block;
@@ -125,10 +124,13 @@ table {
   
 th, td {
     border: solid white 1px;
+    color: white;
+    text-align: center;
 }
 
 th {
     color: white;
+    text-align: center;
 }
 
 .table-number {

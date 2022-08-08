@@ -1,8 +1,8 @@
-import { countPage } from "../index";
+import { countPage } from "./index";
 
 export async function getCars() {
-    let limit = 7;
-  const response = await fetch(`http://127.0.0.1:3000/garage/?_page=${countPage}&_limit=${limit}`);
+  let limitItemsOnPage = 7;
+  const response = await fetch(`http://127.0.0.1:3000/garage/?_page=${countPage.page}&_limit=${limitItemsOnPage}`);
   const totalCount = await response.headers.get('X-Total-Count');
   const data = await response.json();
   return {data, totalCount};
@@ -63,10 +63,7 @@ export async function switchCarEngine(id, status) {
   }
 
   export async function getWinners() {
-    let limit = 10;
   const response = await fetch(`http://127.0.0.1:3000/winners`);
-  console.log(response)
-//   const totalCount = await response.headers.get('X-Total-Count');
   const data = await response.json();
   return data;
 }
@@ -78,35 +75,33 @@ export async function getWinner(id) {
 }
 
 export async function createWinner(body) {
-    const response = await fetch(`http://127.0.0.1:3000/winners`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    });
-    const data = await response.json();
-    return data;
-  }
+  const response = await fetch(`http://127.0.0.1:3000/winners`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  const data = await response.json();
+  return data;
+}
 
+export async function deleteWinner(id) {
+  const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
+    method: 'DELETE',
+  });
+  const data = await response.json();
+  return data;
+}
 
-
-  export async function deleteWinner(id) {
-    const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
-      method: 'DELETE',
-    });
-    const data = await response.json();
-    return data;
-  }
-
-  export async function updateWinner(id, body) {
-    const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    });
+export async function updateWinner(id, body) {
+  const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
     const data = await response.json();
     return data;
   }
