@@ -35,7 +35,7 @@ export function addListener() {
 
 //-------------------- Show modal ---------------------//
 
-export async function showWinner(id) {
+export async function showWinner(id: number) {
     if (isWin.state === false) {
       let car = await getCar(id);
       modalWindow.style.display='flex';

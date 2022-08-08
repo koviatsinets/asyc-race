@@ -8,13 +8,13 @@ export async function getCars() {
   return {data, totalCount};
 }
 
-export async function getCar(id) {
+export async function getCar(id: number) {
   const response = await fetch(`http://127.0.0.1:3000/garage/${id}`);
   const data = await response.json();
   return data;
 }
 
-export async function createCar(body) {
+export async function createCar(body: { name: string; color: string; }) {
   const response = await fetch(`http://127.0.0.1:3000/garage`, {
     method: 'POST',
     headers: {
@@ -26,7 +26,7 @@ export async function createCar(body) {
   return car;
 }
 
-export async function deleteCar(id) {
+export async function deleteCar(id: number) {
   const response = await fetch(`http://127.0.0.1:3000/garage/${id}`, {
     method: 'DELETE',
   });
@@ -34,7 +34,7 @@ export async function deleteCar(id) {
   return data;
 }
 
-export async function updateCar(id, body) {
+export async function updateCar(id: number, body: { name: string; color: string; }) {
   const response = await fetch(`http://127.0.0.1:3000/garage/${id}`, {
     method: 'PUT',
     headers: {
@@ -46,7 +46,7 @@ export async function updateCar(id, body) {
   return car;
 }
 
-export async function startStopCarEngine(id, status) {
+export async function startStopCarEngine(id: number, status: string) {
   const response = await fetch(`http://127.0.0.1:3000/engine?id=${id}&status=${status}`, {
     method: 'PATCH',
   });
@@ -54,7 +54,7 @@ export async function startStopCarEngine(id, status) {
   return car;
 }
 
-export async function switchCarEngine(id, status) {
+export async function switchCarEngine(id: number, status: string) {
     const response = await fetch(`http://127.0.0.1:3000/engine?id=${id}&status=${status}`, {
       method: 'PATCH',
     });
@@ -68,13 +68,13 @@ export async function switchCarEngine(id, status) {
   return data;
 }
 
-export async function getWinner(id) {
+export async function getWinner(id: number) {
   const response = await fetch(`http://127.0.0.1:3000/winners/${id}`);
   const data = await response.json();
   return data;
 }
 
-export async function createWinner(body) {
+export async function createWinner(body: { id: number; wins: number; time: number; }) {
   const response = await fetch(`http://127.0.0.1:3000/winners`, {
     method: 'POST',
     headers: {
@@ -86,7 +86,7 @@ export async function createWinner(body) {
   return data;
 }
 
-export async function deleteWinner(id) {
+export async function deleteWinner(id: number) {
   const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
     method: 'DELETE',
   });
@@ -94,7 +94,7 @@ export async function deleteWinner(id) {
   return data;
 }
 
-export async function updateWinner(id, body) {
+export async function updateWinner(id: number, body: any) {
   const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
     method: 'PUT',
     headers: {

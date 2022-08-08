@@ -5,12 +5,12 @@ import { countPage } from "./index";
 import { addListener } from "./utils"
 
 export async function render() {
-  let amountCars = document.querySelector('.amount-cars');
-  let amountPage = document.querySelector('.amount-page');
-  const main = document.querySelector('.main');
+  let amountCars = document.querySelector('.amount-cars') as HTMLElement;
+  let amountPage = document.querySelector('.amount-page') as HTMLElement;
+  const main = document.querySelector('.main') as HTMLElement;
   let blockCars = '';
   const obj = await getCars();
-  obj.data.forEach(el => {
+  obj.data.forEach((el: { id: number; name: string; color: string; }) => {
     blockCars += 
               `<div class="block" data-id="${el.id}">
                   <div class="block-row-1">
@@ -36,8 +36,8 @@ export async function render() {
               `
     })
   main.innerHTML = blockCars;
-  amountCars.innerText = obj.totalCount
-  amountPage.innerText = countPage.page;
+  amountCars.innerText = obj.totalCount as string
+  amountPage.innerText = String(countPage.page);
   addListener();
 }
 
@@ -45,8 +45,8 @@ export async function render() {
 
 
 export async function renderWinners() {
-  let numberWinners = document.querySelector('.number-winners')
-  let tableContainer = document.querySelector('.table-container');
+  let numberWinners = document.querySelector('.number-winners') as HTMLElement
+  let tableContainer = document.querySelector('.table-container') as HTMLElement;
   let obj = await getWinners();
   let blockTable = '';
   let countPosition = 1;

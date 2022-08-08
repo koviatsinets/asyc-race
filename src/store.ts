@@ -1,9 +1,9 @@
 //-------------------- SPA ---------------------//
 
 export function switchToStateFromURLHash() {
-	let SPAState={};
-	let contentGarage = document.querySelector('.content-garage');
-	let contentWinners = document.querySelector('.content-winners');
+	let SPAState={pagename: ''};
+	let contentGarage = document.querySelector('.content-garage') as HTMLElement;
+	let contentWinners = document.querySelector('.content-winners') as HTMLElement;
   let URLHash=window.location.hash;
   let stateStr=URLHash.substring(1);
   if ( stateStr!="" ) {
@@ -23,7 +23,7 @@ export function switchToStateFromURLHash() {
   }
 }
 
-export function switchToState(newState) {
+export function switchToState(newState: { pagename: string; }) {
  	let stateStr=newState.pagename;
   location.hash=stateStr;
 }

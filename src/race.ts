@@ -5,7 +5,7 @@ import { buttonStartRace, buttonStopRace, isWin } from "./index"
 export function startRace() {
     let arr = document.querySelectorAll('.button-start-car');
     arr.forEach(el => {
-      el.click();
+      (el as HTMLElement).click();
     });
     buttonStartRace.disabled = true;
     isWin.state = false;
@@ -16,7 +16,7 @@ export function startRace() {
  export function stopRace() {
     let arr = document.querySelectorAll('.button-stop-car');
     arr.forEach(el => {
-      el.click();
+      (el as HTMLElement).click();
     })
     buttonStopRace.disabled = true;
     buttonStartRace.disabled = false;
