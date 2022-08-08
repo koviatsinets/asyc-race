@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-race</title>
+</head>
+<body>
+    <div class="nav">
+        <button class="buttonToGarage">TO GARAGE</button>
+        <button class="buttonToWinners">TO WINNERS</button>
+    </div>
+    <div class="content-garage">
+        <div class="control">
+            <div class="row">
+                <input class="input-create" type="text">
+                <input class="color-create" type="color" value="#FFFFFF">
+                <button class="button-create">CREATE</button>
+            </div>
+            <div class="row">
+                <input class="input-update" type="text" disabled>
+                <input class="color-update" type="color" value="#FFFFFF" disabled>
+                <button class="button-update" disabled>UPDATE</button>
+            </div>
+            <div class="row">
+                <button class="start-race">RACE</button>
+                <button class="stop-race">RESET</button>
+                <button class="button-generate-cars">GENERATE CARS</button>
+            </div>
+        </div>
+        <p class="number-garage">Garage (<span class="amount-cars">0</span>)</p>
+        <p class="number-page">page #<span class="amount-page">1</span></p>
+        <div class="main"></div>
+        <div class="nav-bottom">
+            <button class="button-prev">Prev page</button>
+            <button class="button-next">Next page</button>
+        </div>
+    </div>
+    <div class="content-winners">
+        <p class="number-garage">Winners (<span class="number-winners">1</span>)</p>
+        <p class="number-page">page #1</p>
+            <table>
+                <thead>
+                    <td>N</td>
+                    <td>COLOR</td>
+                    <td>NAME</td>
+                    <td>WINS</td>
+                    <td>TIME</td>
+                </thead>
+                <tbody class="table-container"></tbody>
+            </table>
+            <div class="nav-bottom">
+                <button>Prev page</button>
+                <button>Next page</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-window">
+        <div class="modal-text"></div>
+        <button class="button-modal-close">close window</button>
+    </div>
+    <!-- <script type="module" src="./index.js"></script> -->
+</body>
+</html>
